@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Sign Up</title>
+</head>
+<body>
+<div class="signup-container">
+    <!-- Left section for the image -->
+    <div class="left-section">
+        <img th:src="@{/images/h7.jpg}" alt="Sign Up Image" />
+    </div>
+
+    <!-- Right section for the form -->
+    <div class="right-section">
+        <div class="logo-container">
+            <img th:src="@{/images/logo.png}" alt="Logo">
+        </div>
+        <form action="/signup" method="post">
+            <h1>Sign Up</h1>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                />
+            </div>
+
+            <button type="submit">Sign Up</button>
+            <p class="login-link">
+                Already signed up?
+                <a th:href="@{/login}">Login</a>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
