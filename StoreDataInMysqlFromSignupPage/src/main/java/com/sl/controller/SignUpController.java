@@ -2,6 +2,8 @@ package com.sl.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +26,14 @@ public class SignUpController {
 	        userService.saveUser(user);
 	        return "redirect:/signup?success"; // Redirects to a success page or shows success message
 	    }
+	    
+	    @GetMapping("/login")
+	    public String showLoginPage() {
+	        return "login"; // Name of your Thymeleaf template, e.g., login.html
+	    }
+	   
+	  
+
 	}
 
 
